@@ -1,0 +1,89 @@
+.background {
+  background: var(--blue);
+  height: 100vh;
+}
+
+.container{
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 768px;
+}
+
+.login {
+  flex: 1;
+  margin-left: 20rem;
+}
+
+.loginContent {
+  margin-top: 96px;
+}
+
+.loginContent strong {
+  font-size: 36px;
+  color: var(--white);
+}
+
+.loginContent p {
+  margin-top: 24px;
+  width: 318px;
+  display: flex;
+  align-items: center;
+
+  font-size: 1.25rem;
+  color: var(--text-highlight);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.loginContent p img {
+  padding-right: 0.8rem;
+}
+
+.inputContainer {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.inputContainer input {
+  width: 340px;
+  height: 80px;
+
+  background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+  border-radius: 5px 0px 0px 5px;
+  border: 0;
+
+  font-size: 24px;
+  padding-left: 16px;
+  color: var(--text-highlight);
+
+}
+
+.inputContainer input:hover {
+  border: 1px solid var(--blue-dark);
+}
+.inputContainer input:focus {
+  outline: 0;
+  border: 1px solid var(--blue-dark);
+}
+.inputContainer a {
+  width: 80px;
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue-dark);
+  border-radius: 0px 5px 5px 0px;
+
+  border: 0;
+}
+
+.inputContainer a.fulled {
+  background: var(--green);
+}
