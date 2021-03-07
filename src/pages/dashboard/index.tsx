@@ -1,5 +1,6 @@
 import { GetServerSideProps } from 'next';
 import Challenges from '../../components/Pages/Challenges'
+import Leaderboard from '../../components/Pages/LeaderBoard';
 import Sidebar from '../../components/Sidebar';
 
 interface HomeProps {
@@ -15,11 +16,12 @@ export default function Dashboard({
   return (
     <div>
       <Sidebar />
-      <Challenges 
+      {/* <Challenges 
         level={level}
         challengesCompleted={challengesCompleted}
         currentExperience={currentExperience}
-      />
+      /> */}
+      <Leaderboard /> 
     </div>
   )
 }
