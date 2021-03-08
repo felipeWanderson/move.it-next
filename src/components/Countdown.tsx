@@ -1,10 +1,14 @@
 import { useCowntdown } from '../hooks/Countdown';
 import styles from '../styles/components/Countdown.module.css';
+import { BsPlayFill } from 'react-icons/bs';
+import { MdClose } from 'react-icons/md';
+import { RiCheckboxCircleFill } from 'react-icons/ri';
 
 export function Countdown() {
   const { 
     minutes, 
-    seconds, 
+    seconds,
+    progress, 
     resetCountdown, 
     isActive, 
     hasFinished, 
@@ -29,29 +33,42 @@ export function Countdown() {
     </div>
 
     {hasFinished ? (
+      <>
       <button
         disabled 
         className={styles.countdownButton} 
       >
         Ciclo encerrado
+        <RiCheckboxCircleFill color="#4cd62b" />
       </button>
+      <div className={styles.progressCountdown}>
+        <div style={{ width: '100%' }} />
+      </div>
+      </>
     ): (
       <>
         { isActive ? (
+          <>
           <button 
             type="button"
             className={`${styles.countdownButton} ${styles.countdownButtonActive}`} 
             onClick={resetCountdown}
           >
             Abandonar ciclo
+            <MdClose />
           </button>
+          <div className={styles.progressCountdown}>
+            <div style={{ width: `${progress}%` }} />
+          </div>
+          </>
         ): (
           <button 
             type="button" 
             className={styles.countdownButton} 
             onClick={startCountdown}
           >
-            Iniciar um ciclo
+            Iniciar um ciclo 
+            <BsPlayFill />
           </button>
         )}
       </>

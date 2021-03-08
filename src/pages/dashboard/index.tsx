@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import { useState } from 'react';
 import Challenges from '../../components/Pages/Challenges'
 import Leaderboard from '../../components/Pages/LeaderBoard';
 import Sidebar from '../../components/Sidebar';
@@ -13,15 +14,19 @@ export default function Dashboard({
   currentExperience, 
   challengesCompleted
 }: HomeProps) {
+  const [page, setPage] = useState('challenges'); 
   return (
+    
     <div>
-      <Sidebar />
-      {/* <Challenges 
-        level={level}
-        challengesCompleted={challengesCompleted}
-        currentExperience={currentExperience}
-      /> */}
-      <Leaderboard /> 
+      <Sidebar setPage={setPage}/>
+      {page === 'challenges' && (
+        <Challenges 
+          level={level}
+          challengesCompleted={challengesCompleted}
+          currentExperience={currentExperience}
+        />
+      )}
+      {page === 'leaderboard' && <Leaderboard /> }
     </div>
   )
 }
